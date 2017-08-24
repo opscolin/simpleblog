@@ -30,10 +30,24 @@ uWSGI==2.0.15
 ```
 
 ---
+## 初始化数据库
+
+```
+python manage.py makemigrations
+python manage.py imgrate
+``` 
+
+同时记得创建管理员账号哦
+
+python manage.py createsuperuser
+
 
 ## 效果截图
+
+首页效果图
 
 ![首页效果图](./static/images/blog-index.png)
 
 
+默认归档页效果图
 ![默认归档页效果图](./static/images/blog-archive.png)
