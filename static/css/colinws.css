@@ -1,0 +1,46 @@
+
+/*自定义颜色*/
+/*自定义背景颜色*/
+.cw-bg-gray {background-color: #999999}
+.cw-bg-gray-1 {background-color: #f2f1f2}
+/*.cw-bg-gray-2 {background-color: #323232}*/
+.cw-bg-blue {background-color: #009cda}
+.cw-bg-red {background-color: #c62b26}
+.cw-bg-green {background-color: #44b549}
+.cw-bg-white {background-color: #f9f9f9}
+.cw-bg-black {background-color: #333333}
+.cw-bg-purple {background-color: #6975a6}
+
+
+.my-top-follow {
+    background-color: #6975a6
+}
+
+.my-top-follow-nav-item {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    font-weight: 500;
+    color: #cdddeb;
+}
+
+.my-top-nav {
+    background-color: #f9f9f9
+}
+
+
+/* footer */
+
+
+.my-footer {
+    padding: 40px 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e5e5e5;
+}
+.my-footer p:last-child {
+    margin-bottom: 0;
+}
+
+

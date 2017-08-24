@@ -1,0 +1,39 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% load markdown %}
+
+{% block title %}全站运维| 详情页 | Colin.Liu {% endblock %}
+{% block content %}
+
+{% if blog %}
+<div class="detail">
+	<h2 class="blogtitle">{{ blog.title }}</h2>
+	<div class="pubinfo">
+		<ul>
+			<li>Posted by {{ blog.author }}  on {{ blog.created|date:"Y-m-d" }}</li>
+			<li>Category:&nbsp;&nbsp; {{ blog.categroy }}</li>
+			<li>Tags: <ul>{% for tag in blog.tags.all %}<li>{{ tag }}</li>{% endfor %}</ul></li>
+<!-- <ul><li>python</li><li>linux</li></ul></li>-->
+		</ul>
+		<hr>
+	</div>
+	<div>
+		{{ blog.content|markdown|safe }}
+	</div>
+</div>	
+<hr>
+{% else %}
+	<div class="detail">
+		<p>Sorry, 对应的博客不存在... ...</p>
+	</div>
+{% endif %}
+
+<center>
+	<p align="center">
+	<img src="http://upload-images.jianshu.io/upload_images/1394001-cb23ed39087edab0.jpg" alt="公众号: DailyJobOps" width="200" height="200"></img>
+	<br>
+	<U>&nbsp;&nbsp;&nbsp;&nbsp;公众号: DailyJobOps&nbsp;&nbsp;&nbsp;&nbsp;</U>
+	</p>
+</center>
+
+{% endblock %}

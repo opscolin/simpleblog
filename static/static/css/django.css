@@ -1,0 +1,254 @@
+/* Main layout and basic typography. */
+html, body {
+  background-color: #fbfbfb;
+  color: #111111;
+  font-family: "Palatino Linotype", Calluna-Exljbris, Georgia, "Times New Roman", Times, serif; }
+
+div#main-wrap {
+  width: 38em;
+  margin: 1.5em auto; }
+
+div#content {
+  margin: 1.5em 0em; }
+
+div#excerpt {
+  display: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; }
+
+div.screenshot {
+  text-align: center;
+  margin-bottom: 1.5em; }
+  div.screenshot img {
+    padding: 1em;
+    background-color: #eee; }
+  div.screenshot img.force-border {
+    padding: 0;
+    border: 1px solid black; }
+
+/* Code/monospaced styles. */
+tt, code, kbd, samp, pre {
+  line-height: 24px;
+  font-size: 12px;
+  font-family: Consolas, Monaco, "Courier New", Courier, monospace; }
+
+pre {
+  background-color: #f5f5f5;
+  padding: 11px;
+  line-height: 0px;
+  border: 1px solid #ccc;
+  margin-bottom: 24px;
+  overflow: auto; }
+
+p code, li code {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 2px 6px;
+  line-height: 0px;
+  white-space: nowrap; }
+
+/* Header styles. */
+
+div.blogheader {
+  font-family: Zapfino;
+  margin-top: 80px;
+  text-align: center;
+}
+
+div.blogheader h1 {
+    font-size: 4em;
+    line-height: 1.125em;
+    margin: 0;
+    
+}
+
+div.blogheader h3 {
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 10px;
+}
+
+div.blogheader h1 a {
+    color: #111111;
+    font-weight: normal;
+    text-shadow: 0px 1px 1px #fff;
+}
+
+div.blogheader h1 a:hover {
+    color: #111111;
+    font-weight: normal;
+    text-shadow: 0px 1px 1px #fff;
+    text-decoration: none;
+
+}
+
+
+div.blognav {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 30px auto;
+/*  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 150px;*/
+}
+
+div.blognav ul {
+  list-style-type: none;
+}
+
+div.blognav ul li {
+  display: inline-block;
+}
+
+div.blognav ul li a  {
+  color: orange;
+}
+
+div.blognav ul li a:hover  {
+  color: orange;
+  /*text-decoration: none;*/
+}
+
+
+div.blogcontent {
+  width: 60%;
+  min-height: 100%;
+  padding-bottom: 120px;
+
+}
+
+div.blogpreview {
+  font-size: 18px;
+  /*font-family: ;*/
+}
+
+div.blogpreview > h3 {
+  color: orange;
+}
+
+div.blogpreview > h3 a {
+  color: orange;
+}
+
+div.blogpreview > h3 a:hover {
+  color: orange;
+  /*text-decoration: none;*/
+}
+
+
+div.blogpreview > p {
+  color: gray;
+}
+
+div.abstract {
+  margin: 20px;
+}
+
+div.attach {
+  margin: 20px;
+  color: gray;
+  /*padding: 10px;*/
+}
+
+div.attach p {
+  font-size: 16px;
+}
+
+div.attach p a {
+  color: gray;
+}
+
+
+div.blogfooter {
+  text-align: center;
+  height: 100px;
+  width: 60%;
+  margin-top: -100px;
+  /*border-top: 1px solid #eee;*/
+  /*padding-top: 10px;*/
+}
+
+
+div.tabcontentstyle {
+  margin-left: 20px;
+  margin-top: 20px;
+  /*color: red;*/
+}
+
+div.tabcontentstyle h3, .pubdate{
+  color: orange;
+}
+
+.pubdate {
+  margin-right: 10px;
+}
+
+div.tabcontentstyle ul {
+  font-size: 16px;
+  line-height: 2;
+}
+
+div.tabcontentstyle ul li a {
+  color: gray;
+}
+
+div.tabcontentstyle ul li a:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+
+div.blogtabs {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 18px;
+}
+
+div.blogtabs > span {
+  color: orange;
+  margin-left: 20px;
+  margin-right: 20px;
+  /*padding: auto 20px;*/
+}
+
+.tagnumber {
+  color: black;
+}
+
+.about {
+  font-size: 16px;
+}
+
+div.contact ul > li > span, div.links ul > li > span {
+  margin-right: 10px;
+}
+
+div.detail {
+  
+}
+
+div.detail h2 {
+  text-align: center;
+  color: orange;
+  margin-bottom: 30px;
+}
+
+div.detail .pubinfo {
+  color: gray;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+div.pubinfo > ul, div.pubinfo ul > li > ul {
+  list-style-type: none;
+}
+
+div.pubinfo > ul > li >ul{
+  display: inline-block;
+  padding-left: 0px;
+}
+div.pubinfo > ul > li >ul > li {
+  display: inline-block;
+  padding-right: 5px;
+}

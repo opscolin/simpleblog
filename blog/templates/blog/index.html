@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% load markdown %}
+{% block title %}全站运维 | Colin.Liu {% endblock %}
+{% block content %}
+
+{% for blog in blogs %}
+<div class="blogpreview">
+	<h3><a href="{% url 'blog:detail' blog.id %}">{{ blog.title }}</a></h3>
+	<div class="abstract">
+		<p>
+			{{ blog.abstract|markdown|safe }}
+		</p>
+	</div>
+	<div class="attach">
+	<p>
+		Posted by <auther>{{ blog.author }}</auther> on {{blog.created|date:"Y-m-d" }} <br>
+		Category: <a href="{% url 'blog:categroy_archive' blog.categroy.name %}">{{ blog.categroy }}</a><br>
+		Tags: {% for tag in blog.tags.all %} {{ tag }} {% endfor %}
+		<!-- Tags: <a href="">linux</a> | <a href="">python</a><br> -->
+	</p>
+	</div>
+</div>
+<hr>
+{% endfor %}
+{% endblock %}

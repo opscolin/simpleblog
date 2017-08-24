@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% load markdown %}
+{% block title %}全站运维 | 归档页 | Colin.Liu {% endblock %}
+{% block content %}
+<div>
+	<ul id="archivetab" class="nav nav-tabs nav-justified">
+		<li class="active">
+			<a href="#archivedate" data-toggle="tab">按时间</a>
+		</li>
+	</ul>
+	<div class="tab-content">
+		<div id="archivedate" class="tab-pane active tabcontentstyle">
+			<div>
+				<h3>{{ year }}</h3>
+				<ul>
+					{% for post in post_year %}
+						<!-- record is dict -->
+					<li>
+						<span class="pubdate">{{ post.created|date:'Y-m-d' }} </span>
+						<span><a href="{% url 'blog:detail'  post.id %}">{{ post.title }}</a></span>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,99 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+from .models import Blog, Category
+from django.db.models.functions import Extract
+
+
+# Create your views here.
+def index(request):
+	blogs  = Blog.objects.order_by('-created')
+	if blogs:
+		return render(request, 'blog/index.html', {"blogs": blogs})
+	# return HttpResponse('hello blog index')
+	# return render(request, 'blog/index.html')
+
+def detail(request, blogid):
+	blog = Blog.objects.get(id=blogid)
+	tags = blog.tags.all()
+	if blog:
+		return render(request, 'blog/detail.html', {'blog': blog, 'tags':tags})
+
+def year_archive(request, year):
+	try:
+		post_year = Blog.objects.filter(created__year=str(year))
+	except Blog.DoesNotExist:
+		raise Http404
+	return render(request, 'blog/archive.html', {'post_year': post_year, 'year': year})
+
+# def category_archive(request, categroy_id):
+# 	try:
+# 		category = Category.objects.get(id=categroy_id)
+# 		posts = Blog.objects.filter(categroy_id=categroy_id)
+# 	except Blog.DoesNotExist:
+# 		raise Http404
+# 	print(category)
+# 	print(category.name)
+# 	print(posts)
+# 	return render(request, 'blog/archive_by_category.html', {'posts':posts, 'categroy': category})
+# 	# return render(request, 'blog/archive_by_category.html', {'posts':posts,})
+
+def category_archive(request, categroy):
+	try:
+		# category = Category.objects.get(id=categroy_id)
+		posts = Blog.objects.filter(categroy__name=categroy)
+	except Blog.DoesNotExist:
+		raise Http404
+	print(categroy)
+	# print(category.name)
+	print(posts)
+	return render(request, 'blog/archive_by_category.html', {'posts':posts, 'categroy': categroy})
+	# return render(request, 'blog/archive_by_category.html', {'posts':posts,})
+
+
+
+
+def archives(request):
+	try:
+		post_lists = Blog.objects.order_by('-created')
+	except Blog.DoesNotExist:
+		raise Http404
+	#print(type(post_lists))
+	#print(post_lists)
+	return render(request, 'blog/archives.html', {'post_lists': post_lists})
+
+"""
+def archive(request,flag='bydate'):
+	resyear = []
+	bloglist = []
+	if flag == 'bydate':
+		## archive by date
+		blogyear = Blog.objects.annotate(start_year=Extract('created', 'year')).values('start_year').distinct()
+		# print(type(blogyear))
+		# print(blogyear)
+		for record in blogyear:
+			year = record['start_year']
+			resyear.append(year)
+			blogs = list(Blog.objects.filter(created__year=str(year)))
+			# print(type(blogs))
+			temp = {year: blogs}
+			# print('--'*30)
+			# print(temp)
+			# print('--'*30)
+			bloglist.append(temp)
+			# bloglist[year] = Blog.objects.filter(created__year=str(year))
+	else:
+		## archive by category
+		pass
+	# print(type(bloglist))
+	print(resyear)
+	print(bloglist)
+	return render(request, 'blog/archive.html', {'resyear':resyear, 'bloglist':bloglist})
+"""
+
+def about(request):
+	return render(request, 'blog/about.html')
+
+
+def parseJson(request):
+	return render(request, 'blog/json..html')
+	
